@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grade Calculator</title>
+        <style>
+            .container{display:flex;flex-direction:row;justify-content: center;align-items: center;margin:150px;background-color: rgb(48, 47, 47);padding:30px;border-radius: 20px;}
+            body{background-color:rgb(117, 187, 219);font-size: large;}
+            .first{margin:100px;color:white;border-radius: 20px;padding:50px;}
+            input{margin:15px;padding:5px 10px;border-radius:3px;border:none;font-size: large;font-weight: bolder;border-bottom: 3px solid whitesmoke;
+            outline:none;}
+            button{padding:10px;margin:15px;background-color:red;border:none;font-size: 15px;}
+            h1{text-shadow:1px 1px rgb(47, 51, 39) ;border-left: 1.5px solid white;}
+            p{font-weight: bold;color:white;}
+        </style>
+    </head>
+    <body>
+<div class="container">
+    <div class="first">
+       <h1>&nbspStudent Grade  <br>&nbspCalculator</h1>
+    </div>
+    <div id="grade">
+        <input type="text" placeholder="Computer" id="comp"><br>
+        <input type="text" placeholder="English" id="eng"><br>
+        <input type="text" placeholder="Hindi" id="hin"><br>
+        <input type="text" placeholder="Maths" id="maths"><br><br>
+        <button onclick="calc()">Calculate</button>
+        <p id="result"></p>
+    </div>
+</div>
+<script>
+ function calc(){
+     let computer=document.getElementById('comp').value;
+     let english=document.getElementById('eng').value;
+     let hindi=document.getElementById('hin').value;
+     let mat=document.getElementById('maths').value;
+     let total=Number(computer)+Number(english)+Number(hindi)+Number(mat);
+     let per=total/4;
+     let answer=document.getElementById('result');
+     if(per<=100 && per>=80)
+     {
+         answer.innerHTML="Congratulation you are passed with 'A' Grade.Your total marks are "+ total+" and percentage is "+per+".";
+        alert("congratulation you are passed with 'A' Grade");
+     }else if(per<=79 && per>=60){
+        answer.innerHTML="Congratulation you are passed with 'B' Grade.Your total marks are "+ total+" and percentage is "+per+".";
+        alert("congratulation you are passed with 'B' Grade");
+     }else if(per<=59 && per>=40){
+        answer.innerHTML="Congratulation you are passed with 'C' Grade.Your total marks are "+ total+" and percentage is "+per+".";
+        alert("congratulation you are passed with 'C' Grade");
+     }else if(per<=39 && per>=30)
+     {
+        answer.innerHTML="Congratulation you are passed with 'D' Grade.Your total marks are "+ total+" and percentage is "+per+".";
+        alert("congratulation you are passed with 'D' Grade");
+     }else{
+        answer.innerHTML="Sorry you are fail.Your total marks are "+ total+" and percentage is "+per+".";
+         alert("Sorry you are fail");
+     }
+     document.getElementById('comp').value="";
+     document.getElementById('eng').value="";
+     document.getElementById('hin').value="";
+     document.getElementById('maths').value="";
+ }
+
+</script>
+    </body>
+</html>
